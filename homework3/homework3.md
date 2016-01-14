@@ -15,11 +15,63 @@
 **7.14**
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1ey36d49p30j21kw0fkq8k.jpg)
 
+a.
+
+(i) 
+$$ (R ∧ E) ⇐⇒ C$$
+
+错误。当选总统的不一定是保守的。
+
+(ii) 
+$$R ⇒ (E ⇐⇒ C)$$
+
+正确。因为一个激进的人，如果他是总统，那么他是保守的。根据题目意思可以知道，这是正确的。
+
+(iii)
+$$R ⇒ ((C ⇒ E) ∨ ¬E)$$
+
+错误。这其实等价于：
+$$¬R ∨ ¬C ∨ E ∨ ¬E$$
+是重言的。
+
 **7.18**
 ![](http://ww4.sinaimg.cn/large/ed796d65gw1ey36dh9bqkj21kw0cedk6.jpg)
 
+a. 枚举的表格如下所示：
+
+表格数据说明了，对于所有情况表达式都是true的，因此是有效的。
+
+b. 在左边可以得到:
+$$(Food ⇒ Party) ∨ (Drinks ⇒ Party)$$
+$$(¬Food ∨ Party) ∨ (¬Drinks ∨ Party)$$
+$$(¬Food ∨ Party ∨ ¬Drinks ∨ Party)$$
+$$(¬Food ∨ ¬Drinks ∨ Party)$$
+
+在右边可以得到：
+$$(Food ∧ Drinks) ⇒ Party$$
+$$¬(Food ∧ Drinks) ∨ Party$$
+$$(¬Food ∨ ¬Drinks) ∨ Party$$
+$$(¬Food ∨ ¬Drinks ∨ Party)$$
+
+根据以上两边的结果可以得到：
+$$P ⇒ P $$
+
+可以证明（a）是有效的。
+
+c. 为了证明一个句子是有效的，那么证明它的否定是无效的即可。
+
+根据题意可以得到：
+
+$$¬[[(Food ⇒ Party) ∨ (Drinks ⇒ Party)] ⇒ [(Food ∧ Drinks) ⇒ Party]]
+[(Food ⇒ Party) ∨ (Drinks ⇒ Party)] ∧ ¬[(Food ∧ Drinks) ⇒ Party]
+(¬Food ∨ ¬Drinks ∨ Party) ∧ Food ∧ Drinks ∧ ¬Party$$
+
+每三个子句抵消第一个句子，最后句子为空。
+
 **8.6**
 ![](http://ww4.sinaimg.cn/large/ed796d65gw1ey36dvwazgj21kw0cagpd.jpg)
+
+
 
 **8.10**
 ![](http://ww2.sinaimg.cn/large/ed796d65gw1ey36hvtvebj21kw0lsgtv.jpg)

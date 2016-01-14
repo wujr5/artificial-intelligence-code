@@ -281,19 +281,23 @@ d. No, A不能推导出B
 
 e. 是，B可以推导出A
 
-f. We want to try to prove via resolution that (A) entails (B). To do this, we set our knowledge base to consist of (A) and the negation of (B), which we will call (-B), and try to
-derive a contradiction. First we have to convert (A) and (-B) to canonical form. For (-B),
-this involves moving the ¬ in past the two quantifiers. For both sentences, it involves
-introducing a Skolem function:
-(A) x ≥ F1(x)
-(-B) ¬F2(y) ≥ y
-Now we can try to resolve these two together, but the occurs check rules out the unification. It looks like the substitution should be {x/F2(y), y/F1(x)}, but that is equivalent
-to {x/F2(y), y/F1(F2(y))}, which fails because y is bound to an expression containing y. So the resolution fails, there are no other resolution steps to try, and therefore (B)
-does not follow from (A).
+f. 由题意得到：
+$$(A) x ≥ F1(x)$$
+$$(-B) ¬F2(y) ≥ y$$
+现在尝试去推导以上两个结论，但是存在二义性。
+看起来，解是：
+$$\{x/F2(y), y/F1(x)\}$$
+但跟这是一样的：
+$$\{x/F2(y), y/F1(F2(y))\}$$
 
-g. To prove that (B) entails (A), we start with a knowledge base containing (B) and the
-negation of (A), which we will call (-A):
-(-A) ¬F1 ≥ y
-(B) x ≥ F2
-This time the resolution goes through, with the substitution {x/F1, y/F2}, thereby
-yielding False, and proving that (B) entails (A).
+而这时错的，因为y跟一个包含y的表达式联系在了一起。所以推导失败，而且不能再推导下去了。
+
+因此，B不推导出A。
+
+g. (-A)为A的反。
+$$(-A) ¬F1 ≥ y$$
+$$(B) x ≥ F2$$
+
+如下情况下：
+$$ \{x/F1, y/F2\}$$
+以上推导为假。因此证明了B蕴涵A。

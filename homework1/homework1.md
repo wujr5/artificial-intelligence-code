@@ -44,11 +44,14 @@ search-link-maps-from-one-url-to-another-url-use-dfs(url-src, url-dist)
 		path.add(one-url)
 		if one-url is url-dist then return path
 		search-link-maps-from-one-url-to-another-url-use-dfs(one-url, url-dist)
-		
+
 	return null
 ```
+相对来说，深度优先搜索的效果可能会更好，能更快地找到目标url。
 
-对搜索引擎来说，它会保持一个遍布整个web的图，其中节点是网页，中间的连线是链接。
+对搜索引擎来说，它会保持一个遍布整个web的图，其中节点是网页，中间的连线是链接。因此双向搜索是适用的。
+
+前任函数可以是：对比两个url间的相似度。
 
 **3.23**   
 跟踪A*算法应用直线距离启发式求解从Lugoj到Bucharest问题的过程。给出节拓展的顺序和每个节点的f，g和h值。

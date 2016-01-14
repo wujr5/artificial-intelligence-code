@@ -79,15 +79,34 @@ A[229+366=595], R[411+193=604], D[385+242=627], T[333+329=662], R[500+193=693], 
 ![](http://ww2.sinaimg.cn/large/ed796d65gw1ey2yzaxjhgj21kw0b3aed.jpg)
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1ey2ywnuzerj21kw0h7wk8.jpg)
 
+**a**
+
+状态空间：n^2n^.
+
+**b**
+
+5^n^
+
+**c**
+
+曼哈顿距离可以作为启发式函数。`|(n - i + 1) - x_i_| + |n - y_i_|`.
+
+**d**
+
+可采纳的应该只有一个：（iii）`min{h1,... ,hn}`
+
+
+
+The explanation is nontrivial as it requires two observations. First, let the work W in a given solution be the total distance moved by all
+vehicles over their joint trajectories; that is, for each vehicle, add the lengths of all the
+steps taken. We have W ≥ Pi hi ≥≥ n · min{h1,...,hn}. Second, the total work we
+can get done per step is ≤ n. (Note that for every car that jumps 2, another car has to
+stay put (move 0), so the total work per step is bounded by n.) Hence, completing all
+the work requires at least n · min{h1,...,hn}/n = min{h1,...,hn} steps.
+
 **3.30**  
 ![](http://ww4.sinaimg.cn/large/ed796d65gw1ey2z28nqhgj21kw0fadlq.jpg)
 
 **3.32**
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1ey2z3867hqj21kw06tjtu.jpg)
-
-## 2 分析
-
-### 2.1 题3.19分析 
-
-搜索程序python实现如下：
 

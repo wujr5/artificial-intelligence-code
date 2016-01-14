@@ -10,9 +10,10 @@
 广度优先搜索伪代码：
 
 ```cpp
-search-link-maps-from-one-url-to-another-url(url-src, url-dist)
+search-link-maps-from-one-url-to-another-url-use-bfs(url-src, url-dist)
 	url-queue: store url
-	url-strings: array or url
+	url-strings: array of urls
+	path: record the path
 
 	clear(url-queue)
 
@@ -21,7 +22,8 @@ search-link-maps-from-one-url-to-another-url(url-src, url-dist)
 
 	while !url-queue.empty()
 		one-url = url-queue.pop()
-		if one-url is url-dist then return one-url
+		path.add(one-url)
+		if one-url is url-dist then return path
 
 		url-strings = extract-urls-from-the-page-of-url-src(one-url)
 		url-queue.push(url-strings)
@@ -32,7 +34,18 @@ search-link-maps-from-one-url-to-another-url(url-src, url-dist)
 深度优先搜索伪代码：
 
 ```cpp
+search-link-maps-from-one-url-to-another-url-use-dfs(url-src, url-dist)
+	url-strings: array of urls
+	path: record the path
 
+	url-strings = extract-urls-from-the-page-of-url-src(url-src)
+
+	for one-url in url-strings
+		path.add(one-url)
+		if one-url is url-dist then return path
+		search-link-maps-from-one-url-to-another-url-use-dfs(one-url, url-dist)
+		
+	return null
 ```
 
 对搜索引擎来说，它会保持一个遍布整个web的图，其中节点是网页，中间的连线是链接。

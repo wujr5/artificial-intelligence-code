@@ -110,30 +110,14 @@ $$n*\frac{min\{h_1,...h_n\}}{n} = min\{h_1,...h_n\}$$
 **3.30**  
 ![](http://ww4.sinaimg.cn/large/ed796d65gw1ey2z28nqhgj21kw0fadlq.jpg)
 
-This exercise reiterates a small portion of the classic work of Held and Karp (1970).
-a. The TSP problem is to find a minimal (total length) path through the cities that forms
-a closed loop. MST is a relaxed version of that because it asks for a minimal (total
-length) graph that need not be a closed loop—it can be any fully-connected graph. As
-a heuristic, MST is admissible—it is always shorter than or equal to a closed loop.
-b. The straight-line distance back to the start city is a rather weak heuristic—it vastly
-underestimates when there are many cities. In the later stage of a search when there are
-only a few cities left it is not so bad. To say that MST dominates straight-line distance
-is to say that MST always gives a higher value. This is obviously true because a MST
-that includes the goal node and the current node must either be the straight line between
-them, or it must include two or more lines that add up to more. (This all assumes the
-triangle inequality.)
-c. See "search/domains/tsp.lisp" for a start at this. The file includes a heuristic
-based on connecting each unvisited city to its nearest neighbor, a close relative to the
-MST approach.
-d. See (Cormen et al., 1990, p.505) for an algorithm that runs in O(E log E) time, where
-E is the number of edges. The code repository currently contains a somewhat less
-efficient algorithm.
+a.TSP问题是为了在城市之间寻找最短路径的。MST是一个这个问题的更简单的问题，,因为它要求最小(总数长度)图,不需要一个封闭的循环可以是任何全连通图。作为启发式, MST admissible-it总是小于或等于一个封闭的循环。
 
+b. 当有很多城市存在时，直线距离启发式比MST表现得更弱一些。MST总是能给出更有价值的值。因为MST包含了目标节点和当前结点，必须在同一条直线上，或者必须包含两条或更多的直线。
 
+c. 
+
+d. 
 
 **3.32**
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1ey2z3867hqj21kw06tjtu.jpg)
 
-Students should provide results in the form of graphs and/or tables showing both runtime and number of nodes generated. (Different heuristics have different computation costs.)
-Runtimes may be very small for 8-puzzles, so you may want to assign the 15-puzzle or 24-
-puzzle instead. The use of pattern databases is also worth exploring experimentally.

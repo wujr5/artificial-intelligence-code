@@ -245,10 +245,55 @@ c. 答案也是一样的。
 **9.23**
 ![](http://ww4.sinaimg.cn/large/ed796d65gw1ey36kzh2naj21kw0cp793.jpg)
 
+a. 
+$$∀ x Horse(x) ⇒ Animal(x)$$
+$$∀ x,h Horse(x) ∧ HeadOf(h,x) ⇒ ∃ y Animal(y) ∧ HeadOf(h,y)$$
+b. 
+A
+$$¬Horse(x) ∨ Animal(x)$$
+B
+$$Horse(G)$$
+C
+$$HeadOf(H,G)$$
+D
+$$¬Animal(y) ∨ ¬HeadOf(H,y)$$
 
+c. 
+1. 从BC得到
+$$¬Animal(G)$$
+2. 根据A
+$$¬Horse(G)$$
+3. 再结合B课得到结论。
 
 **9.24**
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1ey36lbc0wdj21kw0t7k1j.jpg)
 
+a. 
+(A)：对每个自然数来说，存在另一个小于或等于它的自然数。
 
+(B)：存在一个自然数，小于或者等于所有自然数。
 
+b. A很明显是真的，因为总能找到另一个小于等于它的自然数。
+
+c. B为真，0就是一个符合的数。
+
+d. No, A不能推导出B
+
+e. 是，B可以推导出A
+
+f. We want to try to prove via resolution that (A) entails (B). To do this, we set our knowledge base to consist of (A) and the negation of (B), which we will call (-B), and try to
+derive a contradiction. First we have to convert (A) and (-B) to canonical form. For (-B),
+this involves moving the ¬ in past the two quantifiers. For both sentences, it involves
+introducing a Skolem function:
+(A) x ≥ F1(x)
+(-B) ¬F2(y) ≥ y
+Now we can try to resolve these two together, but the occurs check rules out the unification. It looks like the substitution should be {x/F2(y), y/F1(x)}, but that is equivalent
+to {x/F2(y), y/F1(F2(y))}, which fails because y is bound to an expression containing y. So the resolution fails, there are no other resolution steps to try, and therefore (B)
+does not follow from (A).
+
+g. To prove that (B) entails (A), we start with a knowledge base containing (B) and the
+negation of (A), which we will call (-A):
+(-A) ¬F1 ≥ y
+(B) x ≥ F2
+This time the resolution goes through, with the substitution {x/F1, y/F2}, thereby
+yielding False, and proving that (B) entails (A).

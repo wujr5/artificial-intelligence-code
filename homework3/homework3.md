@@ -5,6 +5,13 @@
 **7.1**
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1ey36cpwqooj21kw0irjy3.jpg)
 
+根据题目意思，可以得到一个状态表格。
+
+![](http://ww1.sinaimg.cn/large/ed796d65gw1ezz7sf8lxsj20n00oatcm.jpg)
+
+可以看到KB |= α2，因为每一行KB = true的同时α2 = true；
+同理，α3也是一样。
+
 **7.14**
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1ey36d49p30j21kw0fkq8k.jpg)
 
@@ -39,9 +46,4 @@
 
 **9.24**
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1ey36lbc0wdj21kw0t7k1j.jpg)
-
-## 2 分析
-
-### 2.1 题7.1分析
-
 

@@ -771,17 +771,9 @@ int main() {
 a.
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1ezyycuveqyj20vk0h6wga.jpg)
 
-b.
-Given nodes 1–6, we would need to look at 7 and 8: if they were both +∞ then the
-values of the min node and chance node above would also be +∞ and the best move
-would change. Given nodes 1–7, we do not need to look at 8. Even if it is +∞, the min
-node cannot be worth more than −1, so the chance node above cannot be worth more
-than −0.5, so the best move won’t change.
+b.跟定点1-6，我们需要寻找7，8：如果7，8都是无穷的，那么，最小节点的值和机会节点都会变得无穷大，最好的移动会发生改变。给定节点1-7，不需要看8。即使8是正无穷的，最小的节点不可能大于-1，所以机会节点不会大于-0.5，所以最好的移动不会改变。
 
-c.
-The worst case is if either of the third and fourth leaves is −2, in which case the chance
-node above is 0. The best case is where they are both 2, then the chance node has value
-2. So it must lie between 0 and 2.
+c. 最坏的情况是，如果第三和第四个节点都是-2，那么机会节点就会是0，最好的情况是，他们都是2，这样机会几点是2，所以必须处于0-2之间。
 
 d.如图所示
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1ezyycuveqyj20vk0h6wga.jpg)

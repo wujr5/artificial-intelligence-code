@@ -62,102 +62,45 @@ d. 如果不控诉，一个人不能被判有罪，无论他们是否触犯了�
 **14.15**
 ![](http://ww2.sinaimg.cn/large/ed796d65gw1eyzoeq93avj21kw0nkn7u.jpg)
 
-This question definitely helps students get a solid feel for variable elimination. Students may need some help with the last part if they are to do it properly.
 a.
 ![](http://ww4.sinaimg.cn/large/ed796d65gw1ezzf9hv3edj20kq0cxjud.jpg)
 
-e
-P(e) ..598525 59223 ..183055 0011295 
-= αP(B).002 ×  ..598525 183055  + .998 ×  ..59223 0011295 
-= α  ..001 999  ×  ..59224259 001493351 
-= α  ..00059224259 0014918576 
-≈ h.284,.716i
-b. Including the normalization step, there are 7 additions, 16 multiplications, and 2 divisions. The enumeration algorithm has two extra multiplications.
+b. 7次加法，16次乘法。枚举算法多了2次额外的乘法。
 
-c. To compute P(X1|Xn = true) using enumeration, we have to evaluate two complete
-binary trees (one for each value of X1), each of depth n −2, so the total work is O(2n).
-Using variable elimination, the factors never grow beyond two variables. For example,
-the first step is
-P(X1|Xn = true)
-= αP(X1)... X
-xn−2
-P(xn−2|xn−3) X
-xn−1
-P(xn−1|xn−2)P(Xn = true|xn−1)
-= αP(X1)... X
-xn−2
-P(xn−2|xn−3) X
-xn−1
-fX
-n−1(xn−1,xn−2)fXn(xn−1)
-= αP(X1)... X
-xn−2
-P(xn−2|xn−3)fX
-n−1Xn(xn−2)
-The last line is isomorphic to the problem with n − 1 variables instead of n; the work
-done on the first step is a constant independent of n, hence (by induction on n, if you
-want to be formal) the total work is O(n).
+c. 
+$$
+P(X_1|X_n = true)
+= αP(X_1)... \sum_{x_{n−2}} P(x_{n−2}|x_{n−3}) \sum_{x_{n−1}} P(x_{n−1}|x_{n−2})P(X_n = true|x_{n−1})
+= αP(X_1)... \sum_{x_{n−2}} P(x_{n−2}|x_{n−3}) \sum_{x_{n−1}} f_{X_{n−1}}(x_{n−1},x_{n−2})f_{X_n(x_{n−1})}
+= αP(X1)... \sum_{x_{n−2}} P(x_{n−2}|x_{n−3}) f_{X_{n−1}X_n}(x_{n−2})
+$$
 
-d. Here we can perform an induction on the number of nodes in the polytree. The base
-case is trivial. For the inductive hypothesis, assume that any polytree with n nodes can
-be evaluated in time proportional to the size of the polytree (i.e., the sum of the CPT
-sizes). Now, consider a polytree with n + 1 nodes. Any node ordering consistent with
-the topology will eliminate first some leaf node from this polytree. To eliminate any
-135
-leaf node, we have to do work proportional to the size of its CPT. Then, because the
-network is a polytree, we are left with independent subproblems, one for each parent.
-Each subproblem takes total work proportional to the sum of its CPT sizes, so the total
-work for n + 1 nodes is proportional to the sum of CPT sizes.
+可以知道，复杂度为：
+$$O(n)$$
 
 **14.18**
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1eyzof6y9qdj21kw0j07as.jpg)
 
 a. 
-There are two uninstantiated Boolean variables (Cloudy and Rain) and therefore four
-possible states.
+4个可能的状态。
 
 b. 
-First, we compute the sampling distribution for each variable, conditioned on its Markov
-blanket.
-P(C|r,s) = αP(C)P(s|C)P(r|C)
-= αh0.5, 0.5ih0.1, 0.5ih0.8, 0.2i = αh0.04, 0.05i = h4/9, 5/9i
-P(C|¬r,s) = αP(C)P(s|C)P(¬r|C)
-= αh0.5, 0.5ih0.1, 0.5ih0.2, 0.8i = αh0.01, 0.20i = h1/21, 20/21i
-P(R|c,s,w) = αP(R|c)P(w|s,R)
-= αh0.8, 0.2ih0.99, 0.90i = αh0.792, 0.180i = h22/27, 5/27i
-P(R|¬c,s,w) = αP(R|¬c)P(w|s,R)
-= αh0.2, 0.8ih0.99, 0.90i = αh0.198, 0.720i = h11/51, 40/51i
-Strictly speaking, the transition matrix is only well-defined for the variant of MCMC in
-which the variable to be sampled is chosen randomly. (In the variant where the variables
-are chosen in a fixed order, the transition probabilities depend on where we are in the
-ordering.) Now consider the transition matrix.
+首先为每个变量计算采样分布。
+![](http://ww1.sinaimg.cn/large/ed796d65gw1ezzfrexyetj20ld07vn01.jpg)
 
-• Entries on the diagonal correspond to self-loops. Such transitions can occur by
-sampling either variable. For example,
-q((c,r) → (c,r)) = 0.5P(c|r,s) + 0.5P(r|c,s,w) = 17/27
-• Entries where one variable is changed must sample that variable. For example,
-q((c,r) → (c,¬r)) = 0.5P(¬r|c,s,w) = 5/54
-• Entries where both variables change cannot occur. For example,
-q((c,r) → (¬c,¬r)) = 0
-his gives us the following transition matrix, where the transition is from the state given
-y the row label to the state given by the column label:
-(c,r)
-(c,¬r)
-(¬c,r)
-(¬c,¬r)
-(c,r) (c,¬r) (¬c,r) (¬c,¬r)
-
-17/27 5/54 5/18 0
-11/27 22/189 0 10/21
-2/9 0 59/153 20/51
-0 1/42 11/102 310/357
-
-Q2 represents the probability of going from each state to each state in two steps.
-Qn (as n → ∞) represents the long-term probability of being in each state starting in
-ach state; for ergodic Q these probabilities are independent of the starting state, so
-very row of Q is the same and represents the posterior distribution over states given
-he evidence.
-We can produce very large powers of Q with very few matrix multiplications. For
-xample, we can get Q2 with one multiplication, Q4 with two, and Q2k with k. Unfor
-unately, in a network with n Boolean variables, the matrix is of size 2n ×2n, so each
-multiplication takes O(23n) operations.
+得到以下几个事实：
+
+$$q((c,r) → (c,r)) = 0.5P(c|r,s) + 0.5P(r|c,s,w) = 17/27$$
+
+$$q((c,r) → (c,¬r)) = 0.5P(¬r|c,s,w) = 5/54$$
+
+$$q((c,r) → (¬c,¬r)) = 0$$
+
+转移矩阵为：
+![](http://ww4.sinaimg.cn/large/ed796d65gw1ezzft56zp5j20df049dgs.jpg)
+
+c. Q^2^表示从两步一个状态到另外一个状态的概率。
+
+d.  Q^n^表示从每一个状态到其他的每个个状态的概率。
+
+e. 我们可以利用少量矩阵乘法产生A的幂值。比如，我们可以通过一次乘法得到Q^2^，两次得到Q^4^，依次类推，但是，在一个网络中有n个布尔变量，矩阵式2n*2n的大小，所以每一次乘法需要O(2^3n^)次操作。

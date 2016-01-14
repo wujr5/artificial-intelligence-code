@@ -1,18 +1,50 @@
 # 人工智能 Homework1
 
-## 1 题目
+## 题目
 
 **3.19**   
 编写程序，输入为两个网页的URL，找出从一个网页到另一个网页的链接路径。用哪种搜索策略最适合？双向搜索适用吗？能用搜索引擎实现一个前任函数吗？
 
-**3.23** 
+**分析**
+
+广度优先搜索伪代码：
+
+```cpp
+search-link-maps-from-one-url-to-another-url(url-src, url-dist)
+	url-queue: store url
+	url-strings: array or url
+
+	clear(url-queue)
+
+	url-strings = extract-urls-from-the-page-of-url-src(url-src)
+	url-queue.push(url-strings)
+
+	while !url-queue.empty()
+		one-url = url-queue.pop()
+		if one-url is url-dist then return one-url
+
+		url-strings = extract-urls-from-the-page-of-url-src(one-url)
+		url-queue.push(url-strings)
+
+	return null
+```
+
+深度优先搜索伪代码：
+
+```cpp
+
+```
+
+对搜索引擎来说，它会保持一个遍布整个web的图，其中节点是网页，中间的连线是链接。
+
+**3.23**   
 跟踪A*算法应用直线距离启发式求解从Lugoj到Bucharest问题的过程。给出节拓展的顺序和每个节点的f，g和h值。
 
-**3.27** 
+**3.27**  
 ![](http://ww2.sinaimg.cn/large/ed796d65gw1ey2yzaxjhgj21kw0b3aed.jpg)
 ![](http://ww3.sinaimg.cn/large/ed796d65gw1ey2ywnuzerj21kw0h7wk8.jpg)
 
-**3.30**
+**3.30**  
 ![](http://ww4.sinaimg.cn/large/ed796d65gw1ey2z28nqhgj21kw0fadlq.jpg)
 
 **3.32**

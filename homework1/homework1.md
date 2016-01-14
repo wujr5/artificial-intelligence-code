@@ -101,14 +101,11 @@ A[229+366=595], R[411+193=604], D[385+242=627], T[333+329=662], R[500+193=693], 
 
 $$w >= \sum_{i}h_i >> n * min \{h1, h2..., h_n\}$$
 
-其次，
+其次，所有的步数应该是 <= n的。因此至少需要：
 
-The explanation is nontrivial as it requires two observations. First, let the work W in a given solution be the total distance moved by all
-vehicles over their joint trajectories; that is, for each vehicle, add the lengths of all the
-steps taken. We have W ≥ Pi hi ≥≥ n · min{h1,...,hn}. Second, the total work we
-can get done per step is ≤ n. (Note that for every car that jumps 2, another car has to
-stay put (move 0), so the total work per step is bounded by n.) Hence, completing all
-the work requires at least n · min{h1,...,hn}/n = min{h1,...,hn} steps.
+$$n*\frac{min\{h_1,...h_n\}}{n} = min\{h_1,...h_n\}$$
+
+的步数。
 
 **3.30**  
 ![](http://ww4.sinaimg.cn/large/ed796d65gw1ey2z28nqhgj21kw0fadlq.jpg)

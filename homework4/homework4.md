@@ -1,47 +1,16 @@
-# 人工智能 Homework4
+# 人工智能 Homework5
 
 ## 1 题目
 
-**7.1**
-![](http://ww3.sinaimg.cn/large/ed796d65gw1ey36cpwqooj21kw0irjy3.jpg)
+**14.6**
+![](http://ww2.sinaimg.cn/large/ed796d65gw1eyznrqz8nyj21kw0ra48e.jpg)
+![](http://ww4.sinaimg.cn/large/ed796d65gw1eyzodup2poj21kw0nidoc.jpg)
 
-**7.14**
-![](http://ww3.sinaimg.cn/large/ed796d65gw1ey36d49p30j21kw0fkq8k.jpg)
+**14.14**
+![](http://ww3.sinaimg.cn/large/ed796d65gw1eyzoeczjbej21kw1elh4c.jpg)
 
-**7.18**
-![](http://ww4.sinaimg.cn/large/ed796d65gw1ey36dh9bqkj21kw0cedk6.jpg)
+**14.15**
+![](http://ww2.sinaimg.cn/large/ed796d65gw1eyzoeq93avj21kw0nkn7u.jpg)
 
-**8.6**
-![](http://ww4.sinaimg.cn/large/ed796d65gw1ey36dvwazgj21kw0cagpd.jpg)
-
-**8.10**
-![](http://ww2.sinaimg.cn/large/ed796d65gw1ey36hvtvebj21kw0lsgtv.jpg)
-![](http://ww3.sinaimg.cn/large/ed796d65gw1ey36i72wwpj21kw0cttdf.jpg)
-
-**8.19**
-![](http://ww3.sinaimg.cn/large/ed796d65gw1ey36ini48zj21kw0engq9.jpg)
-
-**8.23**
-![](http://ww2.sinaimg.cn/large/ed796d65gw1ey36j2toejj21kw0iz45j.jpg)
-
-**8.28**
-![](http://ww2.sinaimg.cn/large/ed796d65gw1ey36jgecl7j21kw0mlwmj.jpg)
-
-**9.9**
-![](http://ww3.sinaimg.cn/large/ed796d65gw1ey36ju8id2j21kw0fzn23.jpg)
-![](http://ww1.sinaimg.cn/large/ed796d65gw1ey36k3p4wuj21kw0fudli.jpg)
-
-**9.19**
-![](http://ww4.sinaimg.cn/large/ed796d65gw1ey36kowe6pj21kw0x3alt.jpg)
-
-**9.23**
-![](http://ww4.sinaimg.cn/large/ed796d65gw1ey36kzh2naj21kw0cp793.jpg)
-
-**9.24**
-![](http://ww3.sinaimg.cn/large/ed796d65gw1ey36lbc0wdj21kw0t7k1j.jpg)
-
-## 2 分析
-
-### 2.1 题7.1分析
-
-
+**14.18**
+![](http://ww3.sinaimg.cn/large/ed796d65gw1eyzof6y9qdj21kw0j07as.jpg)
